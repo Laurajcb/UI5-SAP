@@ -8,3 +8,19 @@ mta-*
 resources
 archive.zip
 .*_mta_build_tmp
+
+# Ignorar dependencias de Node.js
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignorar caché y archivos generados por SAP Fiori Tools
+fioritools/module-cache/
+fioritools/
+@sap/
+@sap-ux/
+
+# Ignorar archivos compilados
+dist/
+build/
