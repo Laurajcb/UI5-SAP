@@ -22,7 +22,7 @@
             </Column>
         </columns>
         <items>
-            <ColumnListItem id="ID_06" vAlign="Middle">
+            <ColumnListItem id="ID_06" vAlign="Middle" type="Active" press="onItemPress">
                 <cells>
                     <ObjectIdentifier id="ID_07"
                         title="{ProductCollection>ProductID}"
