@@ -4,9 +4,11 @@
 >
     <Table id="idProductsTable"
         inset="false"
-        items="{
-            path: 'ProductCollection>/'
-        }">
+        items="{/Products}"
+        >
+      <!-- <List items="{
+        path: 'ProductCollection>/'
+        }"> -->
         <columns>
             <Column id="ID_01">
                 <Text id="ID_T01" text="{i18n>Product}" />
@@ -25,8 +27,8 @@
             <ColumnListItem id="ID_06" vAlign="Middle" type="Active" press="onItemPress">
                 <cells>
                     <ObjectIdentifier id="ID_07"
-                        title="{ProductCollection>ProductID}"
-                        text="{ProductCollection>ProductName}"/>
+                        title="{ProductID}"
+                        text="{ProductName}"/>
                     <ObjectNumber id="ID_11"
                         number="{
                             parts:[{path:'ProductCollection>UnitPrice'},{path:''}],
@@ -35,9 +37,9 @@
                         }"
                         unit="USD" />
                     <Text id="ID_09"
-                        text="{ProductCollection>UnitsInStock}" />
+                        text="{UnitsInStock}" />
                     <Text id="ID_08"
-                        text="{ProductCollection>QuantityPerUnit}" />
+                        text="{QuantityPerUnit}" />
                 </cells>
             </ColumnListItem>
         </items>

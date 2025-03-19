@@ -3,9 +3,23 @@
     xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <VBox id="vTest">
-            <Text id="textPrueba" text="{i18n>textPruebai18n}"></Text>
-            <Button id="btnBuscar" text="{i18n>textBuscar}" press="onPress" />
+         <VBox id="vTest">
+            <Text
+                id="textPrueba"
+                text="{i18n>textPruebai18n}"
+            />
+            <Toolbar id="toolbarID">
+                <Input 
+                    id="inputID" 
+                    change=".onChange"
+                />
+                <Button
+                    id="btnBuscar"
+                    text="{i18n>textBuscar}"
+                    press="onPress"
+                />            
+            </Toolbar>
+
         </VBox>
         
         <VBox id="vTest2">

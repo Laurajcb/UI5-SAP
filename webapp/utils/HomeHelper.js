@@ -11,14 +11,14 @@ sap.ui.define([
 			this._oNorthwindModel = oNorthwindModel;
 		},
 
-		getDataProducts: async function() {
-            let oFilters = [];
+		getProposalBystatus: async function(oFilters) {
             return HomeService.readProducts(this._oNorthwindModel, oFilters);
         },
 
+
         setProductModel: async function (oController, oDatos) {
             let oListModel = oController.getOwnerComponent().getModel('ProductCollection');
-            if(!oListModel){
+            if(!oListModel) {
                 const oModel  = new JSONModel([]);
                 oModel.setSizeLimit(1000000);	
                 oController.getOwnerComponent().setModel(oModel, "ProductCollection");  
