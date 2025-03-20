@@ -11,10 +11,20 @@ sap.ui.define([
 			this._oNorthwindModel = oNorthwindModel;
 		},
 
+        setInitModelLocalData: function (oComponent){
+            oComponent.setModel(new JSONModel({
+                valueInput: " ", 
+                selectedKey: " ",
+            }), "LocalDataModel") 
+        },
+
+        getDataProducts: async function (oFilter) {
+            return HomeService.readProducts(this._oNorthwindModel, oFilter)
+        },
+
 		getProposalBystatus: async function(oFilters) {
             return HomeService.readProducts(this._oNorthwindModel, oFilters);
         },
-
 
         setProductModel: async function (oController, oDatos) {
             let oListModel = oController.getOwnerComponent().getModel('ProductCollection');
@@ -27,5 +37,7 @@ sap.ui.define([
 
             oListModel.setData(oDatos);
         },
+
+        
 	};
 });

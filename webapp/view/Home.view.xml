@@ -1,6 +1,7 @@
 <mvc:View controllerName="project.practice.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:c="sap.ui.core"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
          <VBox id="vTest">
@@ -10,9 +11,21 @@
             />
             <Toolbar id="toolbarID">
                 <Input 
-                    id="inputID" 
-                    change=".onChange"
-                />
+                id="inputID" 
+                change="onChange" 
+                value="{LocalDataModel>/valueInput}"/>
+
+                <ComboBox
+                    id="comboboxID"
+                    selectionChange=".onSelectionChange"
+                    selectedKey="{LocalDataModel>/selectedKey}"
+				    items="{
+					    path: '/Categories',
+					    sorter: { path: 'CategoryName' }
+				    }"
+                >
+				    <core:Item key="{CategoryID}" text="{CategoryName}" />                                     
+                </ComboBox> 
                 <Button
                     id="btnBuscar"
                     text="{i18n>textBuscar}"

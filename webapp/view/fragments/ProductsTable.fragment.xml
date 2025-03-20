@@ -1,14 +1,11 @@
-<c:FragmentDefinition
-    xmlns="sap.m"
-    xmlns:c="sap.ui.core"
->
-    <Table id="idProductsTable"
-        inset="false"
-        items="{/Products}"
-        >
-      <!-- <List items="{
-        path: 'ProductCollection>/'
-        }"> -->
+<c:FragmentDefinition xmlns="sap.m"
+    xmlns:c="sap.ui.core">
+    <Table 
+        id="idProductsTable" 
+        growing="true" growingThreshold="20" growingScrollToLoad="true" 
+        items="{
+            path: 'ProductCollection>/'
+            }">
         <columns>
             <Column id="ID_01">
                 <Text id="ID_T01" text="{i18n>Product}" />
@@ -20,28 +17,30 @@
                 <Text id="ID_T04" text="{i18n>UnitsInStock}" />
             </Column>
             <Column id="ID_03">
-                <Text  id="ID_T02" text="{i18n>QuantityPerUnit}" />
+                <Text id="ID_T02" text="{i18n>QuantityPerUnit}" />
+            </Column>
+            <Column >
+                <Text  text="{i18n>CategoryID}" />
             </Column>
         </columns>
         <items>
-            <ColumnListItem id="ID_06" vAlign="Middle" type="Active" press="onItemPress">
+            <ColumnListItem id="ID_06" type="Active" press="onItemPress">
                 <cells>
-                    <ObjectIdentifier id="ID_07"
-                        title="{ProductID}"
-                        text="{ProductName}"/>
-                    <ObjectNumber id="ID_11"
-                        number="{
-                            parts:[{path:'ProductCollection>UnitPrice'},{path:''}],
-                            type: 'sap.ui.model.type.Currency',
-                            formatOptions: {showMeasure: true}
-                        }"
-                        unit="USD" />
-                    <Text id="ID_09"
-                        text="{UnitsInStock}" />
-                    <Text id="ID_08"
-                        text="{QuantityPerUnit}" />
+                    <ObjectIdentifier id="ID_07" 
+                    title="{ProductCollection>ProductID}" 
+                    text="{ProductCollection>ProductName}" />
+                    <ObjectNumber 
+                        id="ID_11" number="{
+                        parts:[{path:'ProductCollection>UnitPrice'}],
+                        type: 'sap.ui.model.type.Currency',
+                        formatOptions: {showMeasure: true}
+                        }" unit="USD" />
+                    <Text id="ID_09" text="{ProductCollection>UnitsInStock}" />
+                    <Text id="ID_08" text="{ProductCollection>QuantityPerUnit}" />
+                    <Text id="ID_12" text="{ProductCollection>CategoryID}" />
                 </cells>
             </ColumnListItem>
         </items>
+
     </Table>
-</c:FragmentDefinition>
+    </c:FragmentDefinition>
